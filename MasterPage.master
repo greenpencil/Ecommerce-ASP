@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<html>
+<head>
+    <title>Motor Buyer -
+        <asp:ContentPlaceHolder ID="contentPlaceholderTitle" runat="server"></asp:ContentPlaceHolder>
+    </title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="./css/metro.css" rel="stylesheet" />
+    <link href="./css/metro-schemes.css" rel="stylesheet" />
+    <link href="./css/metro-responsive.css" rel="stylesheet" />
+    <link href="./css/metro-icons.css" rel="stylesheet" />
+
+    <link href="./css/style.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="contentPlaceholderHead" runat="server"></asp:ContentPlaceHolder>
+    
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="./js/metro.js"></script>
+</head>
+
+<body>
+    <!-- Logo Bar -->
+    <div class="logo-bar">
+        <div class="container">
+            <a href="./">
+                <img src="./img/logo.png" style="width: 18%;"></a>
+        </div>
+    </div>
+
+    <!-- Navc Bar -->
+    <div class="app-bar bg-steel">
+        <div style="width: 80%; margin: 0 auto;">
+
+            <ul class="app-bar-menu">
+                <li><a href="Default.aspx" class="bg-hover-darkSteel">Home</a></li>
+                <li><a href="NewAdvert.aspx" class="bg-hover-darkSteel">Add New Advert</a></li>
+                <li><a href="Search.aspx" class="bg-hover-darkSteel">Search Adverts</a></li>
+                <li><a href="Offers.aspx" class="bg-hover-darkSteel">Offers</a></li>
+            </ul>
+
+            
+               <ul class="app-bar-menu place-right">
+            <!-- Show login/show user profile -->
+            <% if (Session["Email"] == null)
+               { %>
+                <li><a href="Login.aspx" class="bg-hover-darkSteel">Login or Register</a></li>
+            <% } else { %>
+                    <li><a class="bg-hover-darkSteel" href="UserProfile.aspx?userId=<% Response.Write(Session["UserId"]); %>">Your Profile</a></li>
+            <% } %>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main">
+        <form runat="server">
+        <asp:ContentPlaceHolder ID="contentPlaceholderBody" runat="server"></asp:ContentPlaceHolder>
+
+        </form>
+        <div class="footer bg-steel fg-white" style="height: 3rem;margin-top: 10px;">
+            <div style="width: 80%; margin: 0 auto;">
+                <br />
+                © 2016 kpf.io All Rights Reserved | Created by <a class="fg-grayDark" href="http://www.kpf.io/">Katie Paxton-Fear</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

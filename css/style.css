@@ -1,0 +1,48 @@
+﻿body {
+}
+
+.bg-darcula {
+    background-color: #3c3f41 !important;
+}
+
+.logo-bar {
+  background: #fff;
+  padding: 5px;
+}
+
+.main {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 15px;
+    position: relative;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0,0.23);
+}
+
+body {
+  background-color: #eee;
+}
+
+.bg-darkSteel {
+    background: #455666 !important;
+}
+
+.fg-darkSteel {
+    color: #455666 !important;
+}
+
+.bg-hover-darkSteel:hover {
+  background: #455666 !important;
+}
+
+.fg-hover-darkSteel:hover {
+  color: #455666 !important;
+}
+
+.bd-darkSteel:before {
+    border-color: #455666 !important;
+}
+
+.bd-darkSteel {
+  border-color: #455666 !important;
+}
